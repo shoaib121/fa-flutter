@@ -72,12 +72,12 @@ void main(List<String> arguments) {
   output.writeAsStringSync(generatedOutput.join('\n'));
 }
 
-String generateExampleIcon(String iconName) {
+String generateExampleIcon(String? iconName) {
   if(nameAdjustments.containsKey(iconName)) {
-    iconName = nameAdjustments[iconName];
+    iconName = nameAdjustments[iconName!];
   }
 
-  iconName = new ReCase(iconName).camelCase;
+  iconName = new ReCase(iconName!).camelCase;
 
   return "ExampleIcon(FontAwesomeIcons.$iconName, '$iconName'),";
 }

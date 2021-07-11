@@ -59,9 +59,9 @@ class IconDataLight extends IconData {
 /// [secondary] cannot be the codepoint itself but has to be an [IconData]
 /// object.
 class IconDataDuotone extends IconData {
-  final IconData secondary;
+  final IconData? secondary;
 
-  const IconDataDuotone(int codePoint, {IconData secondary})
+  const IconDataDuotone(int codePoint, {IconData? secondary})
       : this.secondary = secondary,
         super(
           codePoint,

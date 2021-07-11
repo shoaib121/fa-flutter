@@ -141,7 +141,7 @@ void main(List<String> arguments) {
 }
 
 String generateIconDocumentation(
-    String iconName, String style, List searchTerms, String iconLabel) {
+    String iconName, String style, List? searchTerms, String? iconLabel) {
   searchTerms = searchTerms ?? [];
   var searchTermsString = searchTerms.toString();
   searchTermsString =
@@ -160,11 +160,11 @@ String generateIconDocumentation(
   return doc;
 }
 
-String generateIconDefinition(String iconName, String style, String unicode,
-    List searchTerms, String iconLabel) {
+String generateIconDefinition(String iconName, String style, String? unicode,
+    List? searchTerms, String? iconLabel) {
   if (style == 'duotone') {
     return generateDuotoneIconDefinition(
-        iconName, unicode, searchTerms, iconLabel);
+        iconName, unicode!, searchTerms, iconLabel);
   }
 
   String doc =
@@ -177,7 +177,7 @@ String generateIconDefinition(String iconName, String style, String unicode,
 }
 
 String generateDuotoneIconDefinition(String iconName, String primaryUnicode,
-    List searchTerms, String iconLabel) {
+    List? searchTerms, String? iconLabel) {
   String doc =
       generateIconDocumentation(iconName, "duotone", searchTerms, iconLabel);
 
@@ -189,12 +189,12 @@ String generateDuotoneIconDefinition(String iconName, String primaryUnicode,
   return '$doc\nstatic const IconData $iconName = const IconDataDuotone(0x$primaryUnicode, secondary: const IconDataDuotone(0x$secondaryUnicode),);';
 }
 
-String normalizeIconName(String iconName) {
+String normalizeIconName(String? iconName) {
   if(nameAdjustments.containsKey(iconName)) {
-    iconName = nameAdjustments[iconName];
+    iconName = nameAdjustments[iconName!];
   }
 
-  return new ReCase(iconName).camelCase;
+  return new ReCase(iconName!).camelCase;
 }
 
 String styleToDataSource(String style) {

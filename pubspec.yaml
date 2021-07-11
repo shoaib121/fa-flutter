@@ -5,17 +5,17 @@ homepage: https://github.com/fluttercommunity/font_awesome_flutter
 version: 8.12.0
 
 environment:
-  sdk: ">=2.0.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
 
 dev_dependencies:
-  recase: ^3.0.0
+  recase: ^4.0.0
   flutter_test:
     sdk: flutter
-  version: ^1.2.0
+  version: ^2.0.0
 
 flutter:
   fonts:
